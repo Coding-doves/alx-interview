@@ -1,9 +1,11 @@
+#!/usr/bin/python3
 """
 coding a pascal triangle
 """
 
 
 def pascal_triangle(n):
+    '''pascal triangle'''
     pascal = []
 
     if n <= 0:
