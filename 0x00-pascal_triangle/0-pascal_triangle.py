@@ -9,7 +9,7 @@ def pascal_triangle(n):
     pascal = []
 
     if n <= 0:
-        return [];
+        return []
     else:
         for i in range(n):
             row = []
