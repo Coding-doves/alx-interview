@@ -1,19 +1,21 @@
 #!/usr/bin/python3
 
 '''Lock Boxes'''
+
+
 def canUnlockAll(boxes):
     '''if boxes is not a list'''
     if type(boxes) != list:
         return False
 
-    opened_boxes = set() # to remove duplicate keys
-    keys = [0] # first key is 0
+    opened_boxes = set()  # to remove duplicate keys
+    keys = [0]  # first key is 0
 
     while keys:
         '''
-        pop a key and append(unlock a box) 
+        pop a key and append(unlock a box)
         and add to oppened_boxes
-        ''' 
+        '''
         get_key = keys.pop()
         opened_boxes.add(get_key)
 
@@ -23,7 +25,7 @@ def canUnlockAll(boxes):
         # if new key is unique add it to keys array
         for k in boxes[get_key]:
             if (k < len(boxes)) and (k not in opened_boxes)\
-            and (k not in keys):
+             and (k not in keys):
                 keys.append(k)
 
     '''
