@@ -1,4 +1,4 @@
- #!/usr/bin/python3
+#!/usr/bin/python3
 """
 method that calculates the fewest number of operations
 needed to result in exactly n H characters in the file.
@@ -19,7 +19,7 @@ def minOperations(n):
             sum_of_copied_H = len_H
         else:
             total_operations += 1
-          
+    
         len_H += sum_of_copied_H
 
     return total_operations
