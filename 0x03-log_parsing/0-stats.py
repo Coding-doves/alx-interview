@@ -9,10 +9,10 @@ map_status_code = {}
 
 
 def log_parsing():
-    print(f"File Size: {total_file_size}")
+    print("File size: {}".format(total_file_size))
 
     for sta, key in sorted(map_status_code.items()):
-        print(f"{sta}: {key}")
+        print("{}: {}".format(sta, key))
 
 
 try:
