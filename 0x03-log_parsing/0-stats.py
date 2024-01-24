@@ -2,7 +2,7 @@
 '''script that reads stdin line by line and computes metrics'''
 import sys
 
-available_status_code = [100, 301, 400, 401, 403, 404, 405, 500]
+available_status_code = [200, 301, 400, 401, 403, 404, 405, 500]
 total_file_size = 0
 number_of_lines = 0
 map_status_code = {}
