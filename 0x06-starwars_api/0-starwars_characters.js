@@ -4,7 +4,7 @@
 const request = require('request'); // request
 const movieId = process.argv[2];
 
-const apiUrl = `https://swapi-api.alx-tools.com/api/films/${movieId}/`;
+const apiUrl = `https://swapi-api.alx-tools.com/api/films/${movieId}`;
 
 request.get(apiUrl, function (error, response, body) {
   if (!error) {
@@ -12,11 +12,11 @@ request.get(apiUrl, function (error, response, body) {
     const len = urlChar.length;
     starwarsApi(0, urlChar[0], urlChar, len); 
   }
-})
+});
 
 function starwarsApi(k, url, char, len) {
   if (k === len) {
-    return
+    return;
   }
 
   request.get(url, function (err, res, body) {
@@ -25,5 +25,5 @@ function starwarsApi(k, url, char, len) {
       k++;
       starwarsApi(k, char[k], char, len);
     }
-  })
+  });
 }
