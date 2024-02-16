@@ -1,27 +1,26 @@
 #!/usr/bin/node
-// starwars api
+// get movies
 
 const request = require('request');
-const movieId = process.argv[2];
-const apiUrl = `https://swapi-api.alx-tools.com/api/films/${movieId}`;
+const apiUrl = 'https://swapi-api.hbtn.io/api/films/' + process.argv[2];
 
-request.get(apiUrl, function (error, response, body) {
-  if (!error) {
-    const urlChar = JSON.parse(body).characters;
-    const len = urlChar.length;
-    starwarsApi(0, urlChar[0], urlChar, len);
+request.get(apiUrl, function (err, response, body) {
+  if (!err) {
+    const urlchars = JSON.parse(body).characters;
+    const len = urlchars.length;
+    starwarsApi(0, urlchars[0], urlchars, len);
   }
 });
 
-function starwarsApi(k, apiUrl, char, len) {
-  if (k === len) {
+function starwarsApi (i, apiUrl, chars, len) {
+  if (i === len) {
     return;
   }
-  request.get(apiUrl, function (err, res, body) {
+  request.get(apiUrl, function (err, response, body) {
     if (!err) {
       console.log(JSON.parse(body).name);
-      k++;
-      starwarsApi(k, char[k], char, len);
+      i++;
+      starwarsApi(i, chars[i], chars, len);
     }
   });
 }
