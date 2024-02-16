@@ -1,9 +1,8 @@
 #!/usr/bin/node
 // starwars api
 
-const request = require('request'); // request
+const request = require('request');
 const movieId = process.argv[2];
-
 const apiUrl = `https://swapi-api.alx-tools.com/api/films/${movieId}`;
 
 request.get(apiUrl, function (error, response, body) {
@@ -18,7 +17,6 @@ function starwarsApi(k, url, char, len) {
   if (k === len) {
     return;
   }
-
   request.get(url, function (err, res, body) {
     if (!err) {
       console.log(JSON.parse(body).name);
