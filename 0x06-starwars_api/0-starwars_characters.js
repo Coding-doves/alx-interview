@@ -11,29 +11,25 @@ if (!movieId) {
 
 const apiUrl = `https://swapi-api.alx-tools.com/api/films/${movieId}/`;
 
-request(apiUrl, (error, response, body) => {
-  if (error) {
-    console.error("Error fetching data:", error);
-    process.exit(1);
-  }
-
-  if (response.statusCode !== 200) {
-    console.error("Failed to fetch data. Status code:", response.statusCode);
-    process.exit(1);
-  }
-
-  const film = JSON.parse(body);
-  const characters = film.characters;
-
-  // console.log(`Characters in ${film.title}:`);
-  characters.forEach((characterUrl) => {
-    request(characterUrl, (error, response, body) => {
-      if (error) {
-        console.error("Error fetching character data:", error);
-        return;
+function starwarsApi(url){
+  return new Promise( (res, rej) => {
+    request(url, (error, response, body) => {
+      if (!error && response.statusCode === 200) {
+        res(JSON.parse(body));
+      } else {
+        rej(error);
       }
-      const character = JSON.parse(body);
-      console.log(character.name);
     });
   });
-});
+}
+
+async function main (apiUrl) {
+  const result = await starwarsApi(apiUrl);
+
+  for (const i of result.characters) {
+    const n = await starwarsApi(i);
+    console.log(n.name);
+  }
+}
+
+main(apiUrl);
