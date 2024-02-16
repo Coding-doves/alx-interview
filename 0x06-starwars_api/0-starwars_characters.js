@@ -1,4 +1,5 @@
 #!/usr/bin/node
+// starwars api
 
 const request = require('request'); // request
 
@@ -9,6 +10,7 @@ if (!movieId) {
   process.exit(1);
 }
 
+// movieId
 const apiUrl = `https://swapi-api.alx-tools.com/api/films/${movieId}/`;
 
 function starwarsApi(url){
@@ -23,6 +25,7 @@ function starwarsApi(url){
   });
 }
 
+// entry point
 async function main (apiUrl) {
   const result = await starwarsApi(apiUrl);
 
