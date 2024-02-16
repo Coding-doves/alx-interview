@@ -13,11 +13,11 @@ request.get(apiUrl, function (error, response, body) {
   }
 });
 
-function starwarsApi(k, url, char, len) {
+function starwarsApi(k, apiUrl, char, len) {
   if (k === len) {
     return;
   }
-  request.get(url, function (err, res, body) {
+  request.get(apiUrl, function (err, res, body) {
     if (!err) {
       console.log(JSON.parse(body).name);
       k++;
