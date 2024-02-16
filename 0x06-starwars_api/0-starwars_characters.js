@@ -26,6 +26,7 @@ function starwarsApi(url){
 }
 
 // entry point
+
 async function main (apiUrl) {
   const result = await starwarsApi(apiUrl);
 
