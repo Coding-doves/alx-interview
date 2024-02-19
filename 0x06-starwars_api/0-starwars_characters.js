@@ -12,7 +12,7 @@ request.get(apiUrl, function (error, response, body) {
   }
 });
 
-function Names (i, url, chars, len) {
+function starwarsApi (i, url, chars, len) {
   if (i === len) {
     return;
   }
@@ -20,7 +20,7 @@ function Names (i, url, chars, len) {
     if (!err) {
       console.log(JSON.parse(body).name);
       i++;
-      Names(i, chars[i], chars, len);
+      starwarsApi(i, chars[i], chars, len);
     }
   });
 }
