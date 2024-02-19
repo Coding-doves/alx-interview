@@ -9,7 +9,7 @@ request.get(apiUrl, function (error, response, body) {
   if (!error) {
     const urlChar = JSON.parse(body).characters;
     const len = urlChar.length;
-    starwarsApi(0, urlChar[0], urlChar, len); 
+    starwarsApi(0, urlChar[0], urlChar, len);
   }
 });
 
