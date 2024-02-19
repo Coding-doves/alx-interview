@@ -8,11 +8,11 @@ request.get(url, function (err, response, body) {
   if (!err) {
     const urlchars = JSON.parse(body).characters;
     const len = urlchars.length;
-    starwars(0, urlchars[0], urlchars, len);
+    Names(0, urlchars[0], urlchars, len);
   }
 });
 
-function starwars (i, url, chars, len) {
+function Names (i, url, chars, len) {
   if (i === len) {
     return;
   }
@@ -20,7 +20,7 @@ function starwars (i, url, chars, len) {
     if (!err) {
       console.log(JSON.parse(body).name);
       i++;
-      starwars(i, chars[i], chars, len);
+      Names(i, chars[i], chars, len);
     }
   });
 }
