@@ -1,18 +1,18 @@
 #!/usr/bin/node
-// get movies
+// get starwars movies
 
 const request = require('request');
 const url = 'https://swapi-api.hbtn.io/api/films/' + process.argv[2];
 
-request.get(apiUrl, function (error, response, body) {
-  if (!error) {
-    const urlChar = JSON.parse(body).characters;
-    const len = urlChar.length;
-    starwarsApi(0, urlChar[0], urlChar, len); 
+request.get(url, function (err, response, body) {
+  if (!err) {
+    const urlchars = JSON.parse(body).characters;
+    const len = urlchars.length;
+    Names(0, urlchars[0], urlchars, len);
   }
 });
 
-function starwarsApi (i, url, chars, len) {
+function Names (i, url, chars, len) {
   if (i === len) {
     return;
   }
@@ -20,7 +20,7 @@ function starwarsApi (i, url, chars, len) {
     if (!err) {
       console.log(JSON.parse(body).name);
       i++;
-      starwarsApi(i, chars[i], chars, len);
+      Names(i, chars[i], chars, len);
     }
   });
 }
