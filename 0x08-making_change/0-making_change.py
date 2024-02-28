@@ -25,7 +25,7 @@ def makeChange(coins, total) -> int:
     sort_n_reverse = sorted(coins, reverse=True)
 
     for one_coin in sort_n_reverse:
-        if total == 0:
+        if total <= 0:
             return change
 
         change += total // one_coin
