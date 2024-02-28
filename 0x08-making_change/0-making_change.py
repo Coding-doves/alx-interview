@@ -28,8 +28,7 @@ def makeChange(coins, total) -> int:
         if total == 0:
             return change
 
-        if one_coin <= total:
-            change += total // one_coin
-            total = total % one_coin
+        change += total // one_coin
+        total = total % one_coin
 
     return -1
