@@ -3,8 +3,10 @@
 making change
 
 testcase
-# print(makeChange([1, 2, 25], 37))
-# print(makeChange([1256, 54, 48, 16, 102], 1453))
+print(makeChange([1, 2, 25], 37))
+print(makeChange([1256, 54, 48, 16, 102], 1453))
+print(makeChange([1, 2, 25], 0))
+print(makeChange([1, 2, 5], 3))
 '''
 
 
@@ -31,8 +33,3 @@ def makeChange(coins, total) -> int:
             total = total % one_coin
 
     return -1
-print(makeChange([1, 2, 25], 0))
-print(makeChange([1, 2, 5], 3))
-print(makeChange([1, 2, 25], 37))
-print(makeChange([1256, 54, 48, 16, 102], 1453))
-
