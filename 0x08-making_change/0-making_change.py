@@ -33,7 +33,7 @@ def makeChange(coins, total) -> int:
         change += total // one_coin
         total = total % one_coin
 
-   if total == 0:  # Check if total is zero after using all the coins
+    if total == 0:  # Check if total is zero after using all the coins
         return change
     else:
         return -1
