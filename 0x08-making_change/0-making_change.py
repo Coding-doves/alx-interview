@@ -7,6 +7,7 @@ print(makeChange([1, 2, 25], 37))
 print(makeChange([1256, 54, 48, 16, 102], 1453))
 print(makeChange([1, 2, 25], 0))
 print(makeChange([1, 2, 5], 3))
+print(makeChange([1, 2, 10], 11)) -> 2
 '''
 
 
@@ -32,4 +33,7 @@ def makeChange(coins, total) -> int:
         change += total // one_coin
         total = total % one_coin
 
-    return -1
+    if total == 0:  # Check if total is zero after using all the coins
+        return change
+    else:
+        return -1
