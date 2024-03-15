@@ -11,6 +11,7 @@ def is_prime(num):
             return False
     return True
 
+
 def isWinner(x, nums):
     ''' the winner '''
     maria_wins = 0
